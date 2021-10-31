@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle, css } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
   /* noto-sans-regular - latin */
@@ -24,15 +24,15 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
-  html {
-    font-size: 62.5%;
-  }
-  html, body, #__next {
-    height: 100%;
-  }
-  body {
-    font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
+
+  ${({ theme }) => css`
+    html {
+      font-size: 62.5%;
+    }
+    body {
+      font-family: ${theme.font.family.body.name};
+    }
+  `}
 `
 
 export default GlobalStyles
