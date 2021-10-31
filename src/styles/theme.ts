@@ -311,12 +311,17 @@ const spacing = {
   xxlarge: '5.6rem'
 }
 
+const misc = {
+  overlay: `${color.black.c900}40`
+}
+
 export default {
   border,
   color: color_semantic,
   font,
   grid,
   layer,
+  misc,
   shadow,
   spacing
 }
