@@ -295,10 +295,17 @@ const border = {
   }
 }
 
+const shadow = {
+  light: `${color.black.c900}40`,
+  medium: `${color.black.c900}80`,
+  dark: `${color.black.c900}bf`
+}
+
 export default {
   border,
   color: color_semantic,
   font,
   grid,
-  layer
+  layer,
+  shadow
 }
