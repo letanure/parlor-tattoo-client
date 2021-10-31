@@ -283,7 +283,20 @@ const color_semantic = {
   }
 }
 
+const border = {
+  width: {
+    thin: '1px',
+    thick: '2px'
+  },
+  radius: {
+    small: '0.2rem',
+    medium: '0.4rem',
+    large: '0.6rem'
+  }
+}
+
 export default {
+  border,
   color: color_semantic,
   font,
   grid,
