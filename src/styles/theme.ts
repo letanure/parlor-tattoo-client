@@ -235,6 +235,13 @@ const color_semantic = {
     e08: { bg: color.black.c800 },
     e09: { bg: color.black.c900 }
   },
+  text: {
+    body: {
+      default: { bg: color.black.c900 },
+      subdued: { bg: color.black.c600 },
+      link: { bg: color.blue.c500 }
+    }
+  },
   action: {
     primary: {
       disabled: color.purple.c100,
