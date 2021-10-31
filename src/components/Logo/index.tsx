@@ -1,12 +1,12 @@
 import * as S from './styles'
 
 export type LogoProps = {
-  onBackgroundColor?: 'dark' | 'light'
+  hasDarkBg?: boolean
   text?: string
 }
 
-const Logo = ({ onBackgroundColor = 'light', text = 'logo' }: LogoProps) => (
-  <S.Wrapper onBackgroundColor={onBackgroundColor} text={text}>
+const Logo = ({ hasDarkBg = false, text = 'logo' }: LogoProps) => (
+  <S.Wrapper hasDarkBg={hasDarkBg} text={text}>
     <h1>{text}</h1>
   </S.Wrapper>
 )
