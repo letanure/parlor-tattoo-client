@@ -1,22 +1,10 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Story, Meta } from '@storybook/react/types-6-0'
 
-import Logo from '.'
+import Logo, { LogoProps } from '.'
 
 export default {
-  title: 'Layout/Logo',
-  component: Logo,
-  argTypes: {
-    onBackgroundColor: {
-      control: { type: 'select', options: ['light', 'dark'] }
-    },
-    text: { control: 'text' }
-  }
-} as ComponentMeta<typeof Logo>
+  title: 'UI/Logo',
+  component: Logo
+} as Meta
 
-const Template: ComponentStory<typeof Logo> = (args) => <Logo {...args} />
-
-export const Basic = Template.bind({})
-Basic.args = {
-  onBackgroundColor: 'light',
-  text: 'Logo'
-}
+export const Default: Story<LogoProps> = (args) => <Logo {...args} />
