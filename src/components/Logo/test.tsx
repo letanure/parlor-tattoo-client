@@ -11,19 +11,29 @@ describe('<Logo />', () => {
 
   it('should render the light version by default', () => {
     renderWithTheme(<Logo />)
-    expect(
-      screen.getByRole('heading', { name: /Logo/i }).parentElement
-    ).toHaveStyle({
+    expect(screen.getByRole('heading', { name: /Logo/i })).toHaveStyle({
       color: '#8943e3'
     })
   })
 
   it('should render the light version when hasDarkBg is true', () => {
     renderWithTheme(<Logo hasDarkBg={true} />)
-    expect(
-      screen.getByRole('heading', { name: /Logo/i }).parentElement
-    ).toHaveStyle({
+    expect(screen.getByRole('heading', { name: /Logo/i })).toHaveStyle({
       color: '#be93f9'
+    })
+  })
+
+  it('should render a normal logo when size is default', () => {
+    renderWithTheme(<Logo />)
+    expect(screen.getByRole('heading', { name: /Logo/i })).toHaveStyle({
+      fontSize: '1.6rem'
+    })
+  })
+
+  it('should render render a bigger logo', () => {
+    renderWithTheme(<Logo size="large" />)
+    expect(screen.getByRole('heading', { name: /Logo/i })).toHaveStyle({
+      fontSize: '2.8rem'
     })
   })
 })
