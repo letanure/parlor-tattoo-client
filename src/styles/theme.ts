@@ -301,11 +301,22 @@ const shadow = {
   dark: `${color.black.c900}bf`
 }
 
+const spacing = {
+  xxsmall: '0.8rem',
+  xsmall: '1.6rem',
+  small: '2.4rem',
+  medium: '3.2rem',
+  large: '4.0rem',
+  xlarge: '4.8rem',
+  xxlarge: '5.6rem'
+}
+
 export default {
   border,
   color: color_semantic,
   font,
   grid,
   layer,
-  shadow
+  shadow,
+  spacing
 }
