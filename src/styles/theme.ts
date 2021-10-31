@@ -221,7 +221,70 @@ const layer = {
   alwaysOnTop: 210
 }
 
+// Hover states are  one shade lighter on dark background, and one shade darker on light background.
+const color_semantic = {
+  elevation: {
+    e00: { bg: color.black.c050 },
+    e01: { bg: color.black.c100 },
+    e02: { bg: color.black.c200 },
+    e03: { bg: color.black.c300 },
+    e04: { bg: color.black.c400 },
+    e05: { bg: color.black.c500 },
+    e06: { bg: color.black.c600 },
+    e07: { bg: color.black.c700 },
+    e08: { bg: color.black.c800 },
+    e09: { bg: color.black.c900 }
+  },
+  action: {
+    primary: {
+      disabled: color.purple.c100,
+      default: color.purple.c200,
+      hover: color.purple.c300,
+      active: color.purple.c400
+    },
+    neutral: {
+      disabled: color.gray.c100,
+      default: color.gray.c200,
+      hover: color.gray.c300,
+      active: color.gray.c400
+    },
+    negative: {
+      disabled: color.gray.c100,
+      default: color.gray.c200,
+      hover: color.gray.c300,
+      active: color.gray.c400
+    }
+  },
+  status: {
+    error: {
+      disabled: color.red.c100,
+      default: color.red.c200,
+      hover: color.red.c300,
+      active: color.red.c400
+    },
+    warning: {
+      disabled: color.orange.c100,
+      default: color.orange.c200,
+      hover: color.orange.c300,
+      active: color.orange.c400
+    },
+    success: {
+      disabled: color.green.c100,
+      default: color.green.c200,
+      hover: color.green.c300,
+      active: color.green.c400
+    },
+    info: {
+      disabled: color.blue.c100,
+      default: color.blue.c200,
+      hover: color.blue.c300,
+      active: color.blue.c400
+    }
+  }
+}
+
 export default {
+  color: color_semantic,
   font,
   grid,
   layer
