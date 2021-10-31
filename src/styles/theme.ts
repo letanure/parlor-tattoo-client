@@ -204,7 +204,25 @@ const color: ColorGroup = {
   black: color_black
 }
 
+const layer = {
+  base: 10,
+  flat: 20,
+  raised: 30,
+  hovering: 40,
+  elevated: 50,
+  floating: 60,
+  overlay: 70,
+  overlayed: 80,
+  modal: 90,
+  sticky: 100,
+  fixed: 110,
+  absolute: 120,
+  offscreen: 130,
+  alwaysOnTop: 210
+}
+
 export default {
   font,
-  grid
+  grid,
+  layer
 }
