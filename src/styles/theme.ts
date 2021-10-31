@@ -242,6 +242,18 @@ const color_semantic = {
       link: { bg: color.blue.c500 }
     }
   },
+  primary: {
+    on: {
+      dark: color.purple.c200,
+      light: color.purple.c400
+    }
+  },
+  secondary: {
+    on: {
+      dark: color.teal.c200,
+      light: color.teal.c400
+    }
+  },
   action: {
     primary: {
       disabled: color.purple.c100,
