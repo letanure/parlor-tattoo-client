@@ -30,7 +30,7 @@ const wrapperModifiers = {
     css`
       &::after {
         background-color: ${theme.color[lineColor].on.light};
-        bottom: 0rem;
+        bottom: 0;
         content: '';
         display: block;
         height: 0.5rem;
