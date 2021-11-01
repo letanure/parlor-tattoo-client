@@ -3,7 +3,7 @@ import * as S from './styles'
 export type HeadingProps = {
   children: React.ReactNode
   lineColor?: 'primary' | 'secondary'
-  linePosition?: null | 'left' | 'bottom'
+  linePosition?: 'left' | 'bottom'
 }
 
 const Heading = ({
