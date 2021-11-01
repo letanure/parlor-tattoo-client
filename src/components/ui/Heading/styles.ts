@@ -9,7 +9,6 @@ const wrapperModifiers = {
     lineColor: 'primary' | 'secondary',
     position: string
   ) => css`
-    content: ${position};
     position: relative;
 
     ${position === 'left' &&
@@ -23,7 +22,7 @@ const wrapperModifiers = {
         left: 0;
         position: absolute;
         top: 0;
-        width: 0.8rem;
+        width: 0.5rem;
       }
     `}
 
@@ -31,10 +30,10 @@ const wrapperModifiers = {
     css`
       &::after {
         background-color: ${theme.color[lineColor].on.light};
-        bottom: 0;
+        bottom: 0rem;
         content: '';
         display: block;
-        height: 0.8rem;
+        height: 0.5rem;
         left: 0;
         position: absolute;
         width: 5rem;
