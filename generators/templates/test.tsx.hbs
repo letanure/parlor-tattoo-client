@@ -1,13 +1,24 @@
 import { render, screen } from '@testing-library/react'
+import { renderWithTheme } from 'utils/tests/helpers'
 
 import {{pascalCase name}} from '.'
 
 describe('<{{pascalCase name}} />', () => {
   it('should render something', () => {
+    renderWithTheme(<{{pascalCase name}} prop1="test" />)
+    expect(
+      screen.getByRole('heading', { name: /{{pascalCase name}}/i })
+    ).toBeInTheDocument()
+
+  })
+
+  it('should render something', () => {
     const { container } = render(<{{pascalCase name}} />)
-
-    expect(screen.getByRole('heading', { name: /{{pascalCase name}}/i })).toBeInTheDocument()
-
+    expect(
+      screen.getByRole('heading', { name: /{{pascalCase name}}/i })
+    ).toBeInTheDocument()
     expect(container.firstChild).toMatchSnapshot()
   })
+
+
 })
