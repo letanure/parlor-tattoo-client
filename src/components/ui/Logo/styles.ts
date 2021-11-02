@@ -13,8 +13,8 @@ const wrapperModifiers = {
 
 export const Wrapper = styled.div<LogoProps>`
   h1 {
-    ${({ theme, hasDarkBg, size }) => css`
-      color: ${theme.color.primary.on[hasDarkBg ? 'dark' : 'light']};
+    ${({ theme, size }) => css`
+      color: ${theme.color.primary.normal.value};
 
       ${!!size && wrapperModifiers[size](theme.font.size)}
     `}
