@@ -15,7 +15,7 @@ const wrapperModifiers = {
     css`
       padding-left: 1rem;
       &::after {
-        background-color: ${theme.color[lineColor].on.light};
+        background-color: ${theme.color[lineColor].normal.value};
         content: '';
         display: block;
         height: 100%;
@@ -29,7 +29,7 @@ const wrapperModifiers = {
     ${position === 'bottom' &&
     css`
       &::after {
-        background-color: ${theme.color[lineColor].on.light};
+        background-color: ${theme.color[lineColor].normal.value};
         bottom: 0;
         content: '';
         display: block;

@@ -1,3 +1,15 @@
+export type SizeOptions =
+  | 'xsmall'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'xlarge'
+  | 'xxlarge'
+
+export type Sizes = {
+  [key in SizeOptions]: string
+}
+
 type ColorDefinition = {
   c050: string
   c100: string
@@ -21,6 +33,15 @@ const grid = {
   gutter: '3.2rem'
 }
 
+const fontSizes: Sizes = {
+  xsmall: '1.2rem',
+  small: '1.4rem',
+  medium: '1.6rem',
+  large: '1.8rem',
+  xlarge: '2.0rem',
+  xxlarge: '2.8rem'
+}
+
 const font = {
   family: {
     heading: {
@@ -36,14 +57,7 @@ const font = {
       weight: 400
     }
   },
-  size: {
-    xsmall: '1.2rem',
-    small: '1.4rem',
-    medium: '1.6rem',
-    large: '1.8rem',
-    xlarge: '2.0rem',
-    xxlarge: '2.8rem'
-  },
+  size: fontSizes,
   weight: {
     light: 300,
     normal: 400,
@@ -243,15 +257,47 @@ const color_semantic = {
     }
   },
   primary: {
-    on: {
-      dark: color.purple.c200,
-      light: color.purple.c400
+    disabled: {
+      value: color.purple.c100,
+      inverse: color.gray.c900
+    },
+    disabledPressed: {
+      value: color.purple.c200,
+      inverse: color.gray.c900
+    },
+    hover: {
+      value: color.purple.c300,
+      inverse: color.gray.c900
+    },
+    normal: {
+      value: color.purple.c400,
+      inverse: color.gray.c100
+    },
+    active: {
+      value: color.purple.c500,
+      inverse: color.gray.c100
     }
   },
   secondary: {
-    on: {
-      dark: color.teal.c200,
-      light: color.teal.c400
+    disabled: {
+      value: color.teal.c100,
+      inverse: color.gray.c900
+    },
+    disabledPressed: {
+      value: color.teal.c200,
+      inverse: color.gray.c900
+    },
+    hover: {
+      value: color.teal.c300,
+      inverse: color.gray.c900
+    },
+    normal: {
+      value: color.teal.c400,
+      inverse: color.gray.c900
+    },
+    active: {
+      value: color.teal.c500,
+      inverse: color.gray.c900
     }
   },
   action: {
