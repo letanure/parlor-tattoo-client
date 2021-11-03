@@ -43,4 +43,11 @@ describe('<Button />', () => {
       cursor: 'not-allowed'
     })
   })
+
+  it('should render a full width version if provided', () => {
+    renderWithTheme(<Button fullWidth />)
+    expect(screen.getByRole('button')).toHaveStyle({
+      width: '100%'
+    })
+  })
 })

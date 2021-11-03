@@ -20,11 +20,14 @@ const wrapperModifiers = {
     background-color: ${theme.color[action!].disabled.value};
     color: ${theme.color[action!].disabled.inverse};
     cursor: not-allowed;
+  `,
+  fullWidth: css`
+    width: 100%;
   `
 }
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ action, disabled, outline, size, theme }) => css`
+  ${({ action, disabled, fullWidth, outline, size, theme }) => css`
     background-color: ${theme.color[action!].normal.value};
     border-radius: 0.5ch;
     border: 1px solid ${theme.color[action!].normal.value};
@@ -41,5 +44,6 @@ export const Wrapper = styled.button<WrapperProps>`
 
     ${outline && wrapperModifiers.outline(theme, action!)}
     ${disabled && wrapperModifiers.disabled(theme, action!)}
+    ${fullWidth && wrapperModifiers.fullWidth}
   `}
 `

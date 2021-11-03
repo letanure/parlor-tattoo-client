@@ -9,6 +9,7 @@ export default {
     action: { control: { type: 'select' } },
     children: { type: 'string', defaultValue: 'Button' },
     disabled: { defaultValue: false },
+    fullWidth: { defaultValue: false },
     outline: { defaultValue: false },
     size: { control: { type: 'select' } }
   }
