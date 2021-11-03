@@ -6,10 +6,11 @@ export default {
   title: 'UI/Button',
   component: Button,
   argTypes: {
-    children: { type: 'string', defaultValue: 'Button' },
-    size: { control: { type: 'select' } },
     action: { control: { type: 'select' } },
-    outline: { defaultValue: false }
+    children: { type: 'string', defaultValue: 'Button' },
+    disabled: { defaultValue: false },
+    outline: { defaultValue: false },
+    size: { control: { type: 'select' } }
   }
 } as Meta
 

@@ -2,19 +2,21 @@ import { SizeOptions, ColorTypes } from 'styles/theme'
 import * as S from './styles'
 
 export type ButtonProps = {
-  children?: React.ReactNode
-  size?: SizeOptions
   action?: ColorTypes
+  children?: React.ReactNode
+  disabled?: boolean
   outline?: boolean
+  size?: SizeOptions
 }
 
 const Button = ({
-  children,
-  size = 'medium',
   action = 'primary',
-  outline = false
+  children,
+  disabled = false,
+  outline = false,
+  size = 'medium'
 }: ButtonProps) => (
-  <S.Wrapper size={size} action={action} outline={outline}>
+  <S.Wrapper action={action} disabled={disabled} outline={outline} size={size}>
     {!!children && <span>{children}</span>}
   </S.Wrapper>
 )

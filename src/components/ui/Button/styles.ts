@@ -15,11 +15,16 @@ const wrapperModifiers = {
       border-color: ${theme.color[action!].hover.value};
       color: ${theme.color[action!].hover.inverse};
     }
+  `,
+  disabled: (theme: DefaultTheme, action: ColorTypes) => css`
+    background-color: ${theme.color[action!].disabled.value};
+    color: ${theme.color[action!].disabled.inverse};
+    cursor: not-allowed;
   `
 }
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, action, size, outline }) => css`
+  ${({ action, disabled, outline, size, theme }) => css`
     background-color: ${theme.color[action!].normal.value};
     border-radius: 0.5ch;
     border: 1px solid ${theme.color[action!].normal.value};
@@ -35,5 +40,6 @@ export const Wrapper = styled.button<WrapperProps>`
     }
 
     ${outline && wrapperModifiers.outline(theme, action!)}
+    ${disabled && wrapperModifiers.disabled(theme, action!)}
   `}
 `

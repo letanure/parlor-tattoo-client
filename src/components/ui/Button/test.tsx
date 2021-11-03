@@ -36,4 +36,11 @@ describe('<Button />', () => {
       background: 'transparent'
     })
   })
+
+  it('should render a disabled version if provided', () => {
+    renderWithTheme(<Button disabled />)
+    expect(screen.getByRole('button')).toHaveStyle({
+      cursor: 'not-allowed'
+    })
+  })
 })
