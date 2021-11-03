@@ -6,6 +6,7 @@ export type ButtonProps = {
   children?: React.ReactNode
   disabled?: boolean
   fullWidth?: boolean
+  icon?: JSX.Element
   outline?: boolean
   size?: SizeOptions
 }
@@ -15,6 +16,7 @@ const Button = ({
   children,
   disabled = false,
   fullWidth = false,
+  icon,
   outline = false,
   size = 'medium'
 }: ButtonProps) => (
@@ -22,9 +24,11 @@ const Button = ({
     action={action}
     disabled={disabled}
     fullWidth={fullWidth}
+    hasIcon={!!icon}
     outline={outline}
     size={size}
   >
+    {!!icon && icon}
     {!!children && <span>{children}</span>}
   </S.Wrapper>
 )
