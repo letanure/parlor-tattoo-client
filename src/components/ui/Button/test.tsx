@@ -1,12 +1,14 @@
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
+import { Lock } from '@styled-icons/octicons'
 
 import Button from '.'
 
 describe('<Button />', () => {
   it('should render a a text inside', () => {
-    renderWithTheme(<Button>Text</Button>)
+    const { container } = renderWithTheme(<Button>Text</Button>)
     expect(screen.getByRole('button')).toHaveTextContent('Text')
+    expect(container.firstChild).toMatchSnapshot()
   })
 
   it('should render a primary button by default', () => {
@@ -49,5 +51,11 @@ describe('<Button />', () => {
     expect(screen.getByRole('button')).toHaveStyle({
       width: '100%'
     })
+  })
+
+  it('should render an icon version', () => {
+    renderWithTheme(<Button icon={<Lock data-testid="icon" />}>Button</Button>)
+    expect(screen.getByText(/Button/i)).toBeInTheDocument()
+    expect(screen.getByTestId('icon')).toBeInTheDocument()
   })
 })
