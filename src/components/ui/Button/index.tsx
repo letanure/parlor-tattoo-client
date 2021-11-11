@@ -1,18 +1,38 @@
-import { SizeOptions } from 'styles/theme'
+import React from 'react'
+import { SizeOptions, ColorTypes } from 'styles/theme'
 import * as S from './styles'
 
 export type ButtonProps = {
+  action?: ColorTypes
   children?: React.ReactNode
+  disabled?: boolean
+  fullWidth?: boolean
+  icon?: JSX.Element
+  outline?: boolean
   size?: SizeOptions
-  action?: 'primary' | 'secondary'
+  onClick?: () => (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const Button = ({
+  action = 'primary',
   children,
+  disabled = false,
+  fullWidth = false,
+  icon,
+  outline = false,
   size = 'medium',
-  action = 'primary'
+  ...props
 }: ButtonProps) => (
-  <S.Wrapper size={size} action={action}>
+  <S.Wrapper
+    action={action}
+    disabled={disabled}
+    fullWidth={fullWidth}
+    hasIcon={!!icon}
+    outline={outline}
+    size={size}
+    {...props}
+  >
+    {!!icon && icon}
     {!!children && <span>{children}</span>}
   </S.Wrapper>
 )

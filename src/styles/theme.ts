@@ -1,14 +1,28 @@
-export type SizeOptions =
-  | 'xsmall'
-  | 'small'
-  | 'medium'
-  | 'large'
-  | 'xlarge'
-  | 'xxlarge'
+enum sizeOptions {
+  xsmall = 'xsmall',
+  small = 'small',
+  medium = 'medium',
+  large = 'large',
+  xlarge = 'xlarge',
+  xxlarge = 'xxlarge'
+}
+export type SizeOptions = `${sizeOptions}`
 
 export type Sizes = {
   [key in SizeOptions]: string
 }
+
+enum colorTypes {
+  primary = 'primary',
+  secondary = 'secondary',
+  positive = 'positive',
+  warning = 'warning',
+  negative = 'negative',
+  info = 'info',
+  light = 'light',
+  dark = 'dark'
+}
+export type ColorTypes = `${colorTypes}`
 
 type ColorDefinition = {
   c050: string
@@ -300,6 +314,138 @@ const color_semantic = {
       inverse: color.gray.c900
     }
   },
+  negative: {
+    disabled: {
+      value: color.red.c100,
+      inverse: color.gray.c900
+    },
+    disabledPressed: {
+      value: color.red.c200,
+      inverse: color.gray.c900
+    },
+    hover: {
+      value: color.red.c300,
+      inverse: color.gray.c900
+    },
+    normal: {
+      value: color.red.c400,
+      inverse: color.gray.c900
+    },
+    active: {
+      value: color.red.c500,
+      inverse: color.gray.c900
+    }
+  },
+  positive: {
+    disabled: {
+      value: color.green.c300,
+      inverse: color.gray.c900
+    },
+    disabledPressed: {
+      value: color.green.c500,
+      inverse: color.gray.c900
+    },
+    hover: {
+      value: color.green.c500,
+      inverse: color.gray.c900
+    },
+    normal: {
+      value: color.green.c600,
+      inverse: color.gray.c900
+    },
+    active: {
+      value: color.green.c700,
+      inverse: color.gray.c900
+    }
+  },
+  warning: {
+    disabled: {
+      value: color.yellow.c100,
+      inverse: color.gray.c900
+    },
+    disabledPressed: {
+      value: color.yellow.c200,
+      inverse: color.gray.c900
+    },
+    hover: {
+      value: color.yellow.c300,
+      inverse: color.gray.c900
+    },
+    normal: {
+      value: color.yellow.c400,
+      inverse: color.gray.c900
+    },
+    active: {
+      value: color.yellow.c500,
+      inverse: color.gray.c900
+    }
+  },
+  info: {
+    disabled: {
+      value: color.blue.c100,
+      inverse: color.gray.c900
+    },
+    disabledPressed: {
+      value: color.blue.c200,
+      inverse: color.gray.c900
+    },
+    hover: {
+      value: color.blue.c300,
+      inverse: color.gray.c900
+    },
+    normal: {
+      value: color.blue.c400,
+      inverse: color.gray.c900
+    },
+    active: {
+      value: color.blue.c500,
+      inverse: color.gray.c100
+    }
+  },
+  light: {
+    disabled: {
+      value: color.gray.c200,
+      inverse: color.gray.c900
+    },
+    disabledPressed: {
+      value: color.gray.c300,
+      inverse: color.gray.c900
+    },
+    hover: {
+      value: color.gray.c400,
+      inverse: color.gray.c900
+    },
+    normal: {
+      value: color.gray.c500,
+      inverse: color.gray.c900
+    },
+    active: {
+      value: color.gray.c600,
+      inverse: color.gray.c100
+    }
+  },
+  dark: {
+    disabled: {
+      value: color.black.c200,
+      inverse: color.gray.c100
+    },
+    disabledPressed: {
+      value: color.black.c300,
+      inverse: color.gray.c100
+    },
+    hover: {
+      value: color.black.c400,
+      inverse: color.gray.c100
+    },
+    normal: {
+      value: color.black.c500,
+      inverse: color.gray.c100
+    },
+    active: {
+      value: color.black.c600,
+      inverse: color.gray.c100
+    }
+  },
   action: {
     primary: {
       disabled: color.purple.c100,
@@ -319,33 +465,33 @@ const color_semantic = {
       hover: color.gray.c300,
       active: color.gray.c400
     }
-  },
-  status: {
-    error: {
-      disabled: color.red.c100,
-      default: color.red.c200,
-      hover: color.red.c300,
-      active: color.red.c400
-    },
-    warning: {
-      disabled: color.orange.c100,
-      default: color.orange.c200,
-      hover: color.orange.c300,
-      active: color.orange.c400
-    },
-    success: {
-      disabled: color.green.c100,
-      default: color.green.c200,
-      hover: color.green.c300,
-      active: color.green.c400
-    },
-    info: {
-      disabled: color.blue.c100,
-      default: color.blue.c200,
-      hover: color.blue.c300,
-      active: color.blue.c400
-    }
   }
+  // status: {
+  //   error: {
+  //     disabled: color.red.c100,
+  //     default: color.red.c200,
+  //     hover: color.red.c300,
+  //     active: color.red.c400
+  //   },
+  //   warning: {
+  //     disabled: color.orange.c100,
+  //     default: color.orange.c200,
+  //     hover: color.orange.c300,
+  //     active: color.orange.c400
+  //   },
+  //   positive: {
+  //     disabled: color.green.c100,
+  //     default: color.green.c200,
+  //     hover: color.green.c300,
+  //     active: color.green.c400
+  //   },
+  //   info: {
+  //     disabled: color.blue.c100,
+  //     default: color.blue.c200,
+  //     hover: color.blue.c300,
+  //     active: color.blue.c400
+  //   }
+  // }
 }
 
 const border = {
