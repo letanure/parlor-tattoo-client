@@ -35,7 +35,7 @@
   "devDependencies": {
     "@babel/core": "^7.22.20",
     "@babel/preset-typescript": "^7.22.15",
-    "@commitlint/cli": "^14.1.0",
+    "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^14.1.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/commit-analyzer": "^9.0.2",
